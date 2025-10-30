@@ -1,0 +1,143 @@
+.contact-section {
+  padding: 150px ;
+  background: radial-gradient(circle at 30% 20%, #0a0a1a 0%, #050510 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section::before,
+.contact-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.contact-section::before {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 5%;
+  background: #00bfff;
+}
+
+.contact-section::after {
+  width: 400px;
+  height: 400px;
+  bottom: 5%;
+  right: 10%;
+  background: #ff00cc;
+}
+
+.contact-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 60px;
+  background: linear-gradient(90deg, #00bfff, #ff00cc, #00ffcc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.contact-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 40px 20px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.contact-icon {
+  font-size: 2.5rem;
+  color: #00ffcc;
+  margin-bottom: 15px;
+}
+
+.contact-item h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.contact-item p a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item p a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px #00ffcc;
+}
+
+/* Social Links */
+.social-section {
+  margin-top: 40px;
+}
+
+.social-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social-icons a {
+  font-size: 2rem;
+  color: #ccc;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00ffcc;
+  transform: scale(1.2);
+}
+
+/* Footer Message */
+.contact-footer {
+  margin-top: 50px;
+  font-size: 1.1rem;
+  color: #ddd;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-item {
+    padding: 30px 15px;
+  }
+
+  .contact-icon {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,113 @@
+.skills-section {
+  padding: 100px 20px;
+  text-align: center;
+  background: radial-gradient(circle at 20% 30%, #0b0c1a 0%, #020210 100%);
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #00bfff, #ff00cc, #00ffcc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 60px;
+}
+
+.skills-bubbles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.bubble-group {
+  text-align: center;
+  max-width: 900px;
+}
+
+.bubble-title {
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+  color: #ffccff;
+  text-shadow: 0 0 12px rgba(255, 0, 200, 0.5);
+}
+
+.bubble-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.bubble {
+  background: linear-gradient(135deg, #00bfff, #ff00cc);
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: float 6s ease-in-out infinite;
+}
+
+.bubble:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Glowing background orbs */
+.skills-section::before,
+.skills-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.skills-section::before {
+  width: 350px;
+  height: 350px;
+  top: 10%;
+  left: 10%;
+  background: #00bfff;
+}
+
+.skills-section::after {
+  width: 400px;
+  height: 400px;
+  bottom: 10%;
+  right: 10%;
+  background: #ff00cc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .bubble-title {
+    font-size: 1.3rem;
+  }
+
+  .bubble {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}

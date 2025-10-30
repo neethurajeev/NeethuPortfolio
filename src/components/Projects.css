@@ -1,0 +1,168 @@
+.projects-section {
+  position: relative;
+  padding: 120px 20px;
+  background: radial-gradient(
+      circle at 10% 20%,
+      rgba(58, 134, 255, 0.2) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 90% 70%,
+      rgba(255, 0, 150, 0.2) 0%,
+      transparent 60%
+    ),
+    #0b0b15;
+  color: white;
+  overflow: hidden;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff00cc, #007bff, #00ffcc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 70px;
+  letter-spacing: 1px;
+}
+
+/* Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Project Card */
+.project-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 50px 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 30px rgba(255, 0, 221, 0.2),
+    0 0 60px rgba(0, 204, 255, 0.15);
+}
+
+/* Glowing Background */
+.project-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ff00cc, #00ccff, #ffb800);
+  opacity: 0;
+  filter: blur(50px);
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover .project-bg {
+  opacity: 0.4;
+}
+
+/* Overlay for gradient fade */
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  border-radius: 20px;
+}
+
+/* Text */
+.project-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(90deg, #00ffcc, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.project-card p {
+  position: relative;
+  z-index: 1;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.project-card:hover p {
+  color: #fff;
+}
+
+/* Floating Neon Shapes */
+.background-shapes .shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.5;
+  animation: float 8s ease-in-out infinite;
+}
+
+.shape1 {
+  background: #007bff;
+  width: 250px;
+  height: 250px;
+  top: 10%;
+  left: -5%;
+  animation-delay: 0s;
+}
+
+.shape2 {
+  background: #ff00cc;
+  width: 300px;
+  height: 300px;
+  bottom: 5%;
+  right: -5%;
+  animation-delay: 2s;
+}
+
+.shape3 {
+  background: #00ffcc;
+  width: 200px;
+  height: 200px;
+  top: 60%;
+  left: 40%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  .project-card {
+    padding: 35px 20px;
+  }
+}
